@@ -1,0 +1,110 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { actions } from 'astro:actions';
+
+export const prerender = true;
+---
+
+<Layout title="Contact" backgroundUrl="/bg.gif">
+	{/* Profile Card Container */}
+		<div transition:animate="slide" transition:name="main"
+			class="w-full max-w-md bg-[rgba(20,20,23,0.44)] backdrop-blur-lg rounded-lg shadow-xl p-6 text-white"
+		>
+			{/* Header Section */}
+			<div class="flex items-center space-x-4 mb-6">
+				<div>
+					<h1 class="text-xl font-semibold">Contact Me</h1>
+					<p class="text-sm text-gray-300">
+						Get in touch through the form below or social media
+					</p>
+				</div>
+			</div>
+
+			{/* Social Links */}
+			<div class="flex w-full items-center justify-center gap-4 mb-6">
+				<a
+					href="https://discord.com/users/615937200894509069"
+					target="_blank"
+					class="flex items-center gap-2 px-4 py-2 bg-[hsla(0,0%,100%,.03)] rounded-lg hover:bg-[rgba(40,40,45,0.06)] transition-colors"
+				>
+					<img src="/icons/discord.svg" alt="Discord" class="h-5 w-5" />
+					<span>Discord</span>
+				</a>
+
+				<a
+					href="https://t.me/Sqot0"
+					target="_blank" 
+					class="flex items-center gap-2 px-4 py-2 bg-[hsla(0,0%,100%,.03)] rounded-lg hover:bg-[rgba(40,40,45,0.06)] transition-colors"
+				>
+					<img src="/icons/telegram.svg" alt="Telegram" class="h-5 w-5" />
+					<span>Telegram</span>
+				</a>
+			</div>
+
+			{/* Contact Form */}
+			<form class="space-y-4">
+				<div>
+					<label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						class="w-full px-4 py-2 bg-[hsla(0,0%,100%,.03)] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+						required
+					/>
+				</div>
+
+				<div>
+					<label for="contact" class="block text-sm font-medium text-gray-300 mb-1">How to contact you?</label>
+					<input
+						type="text"	
+						id="contact"
+						name="contact"
+						class="w-full px-4 py-2 bg-[hsla(0,0%,100%,.03)] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+						required
+					/>
+				</div>
+
+				<div>
+					<label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+					<textarea
+						id="message"
+						name="message"
+						rows="4"
+						class="w-full px-4 py-2 bg-[hsla(0,0%,100%,.03)] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+						required
+					></textarea>
+				</div>
+
+				<button
+					type="submit"
+					class="group relative w-full px-6 py-3 bg-gradient-to-r from-yellow-500/20 via-yellow-400/20 to-yellow-500/20 text-white rounded-lg font-medium 
+					transition-all duration-300 transform border border-yellow-500/30
+					hover:border-yellow-400/50 hover:shadow-[0_0_15px_rgba(234,179,8,0.15)] active:scale-[0.98]
+					before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-yellow-500/30 before:via-yellow-400/30 before:to-yellow-500/30
+					before:transition-opacity before:duration-300 before:opacity-0 hover:before:opacity-100 before:-z-10 overflow-hidden cursor-pointer"
+				>
+					<span class="relative z-10 flex items-center justify-center gap-2 text-yellow-400/90 group-hover:text-yellow-300">
+						Send Message
+					</span>
+				</button>
+			</form>
+		</div>
+</Layout>
+
+
+<script>
+	import { actions } from 'astro:actions';
+
+	const form = document.querySelector('form') as HTMLFormElement;
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		const {error, data} = await actions.sendForm(new FormData(form));
+		if (error) {
+			alert(error);
+		} else {
+			form.reset();
+			alert(data.message);
+		}
+	});
+</script>

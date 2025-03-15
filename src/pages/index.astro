@@ -1,11 +1,165 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export const prerender = true;
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Sqot0" backgroundUrl="/bg.gif">
+	{/* Profile Card Container */}
+	<div
+		transition:animate="slide"
+		transition:name="main"
+		class="w-full max-w-md bg-[rgba(20,20,23,0.44)] backdrop-blur-lg rounded-lg shadow-xl p-5 text-white"
+	>
+		{/* Header Section */}
+		<div class="flex items-center justify-between space-x-4 mb-3">
+			<div>
+				<h1 class="text-2xl font-semibold">Sqot0</h1>
+			</div>
+			<div class="flex items-center space-x-3">
+				{/* Github, Discord, Telegram, Roblox */}
+				<a
+					href="https://github.com/Sqot0"
+					target="_blank"
+					class="text-white/80 hover:text-white hover:scale-105 transition p-1"
+				>
+					<img
+						src="/icons/github.svg"
+						alt="Github"
+						width={24}
+						height={24}
+					/>
+				</a>
+
+				<a
+					href="https://discord.com/users/615937200894509069"
+					target="_blank"
+					class="text-white/80 hover:text-white hover:scale-105 transition p-1"
+				>
+					<img
+						src="/icons/discord.svg"
+						alt="Discord"
+						width={24}
+						height={24}
+					/>
+				</a>
+
+				<a
+					href="https://t.me/Sqot0"
+					target="_blank"
+					class="text-white/80 hover:text-white hover:scale-105 transition p-1"
+				>
+					<img
+						src="/icons/telegram.svg"
+						alt="Telegram"
+						width={24}
+						height={24}
+					/>
+				</a>
+
+				<a
+					href="https://www.roblox.com/users/3964426614"
+					target="_blank"
+					class="text-white/80 hover:text-white hover:scale-105 transition p-1"
+				>
+					<img src="/icons/roblox.svg" alt="Roblox" width={24} height={24} />
+				</a>
+			</div>
+		</div>
+
+		{/* Quote Section */}
+		<div class="mb-3">
+			<p class="bg-yellow-400/20 text-yellow-400 px-4 py-2 rounded-lg">
+				I am a developer with 3 years of experience focused on creating
+				web applications and bots.
+			</p>
+		</div>
+
+		{/* Tech Stack Section */}
+		<div>
+			<h2 class="text-lg font-semibold mb-3">Tech Stack</h2>
+			<div class="flex flex-wrap gap-2">
+				<span
+					class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+					>TypeScript</span
+				>
+				<span
+					class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm"
+					>JavaScript</span
+				>
+				<span
+					class="px-3 py-1 bg-sky-500/20 text-sky-400 rounded-full text-sm"
+					>React</span
+				>
+				<span
+					class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm"
+					>Node.js</span
+				>
+				<span
+					class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm"
+					>Astro</span
+				>
+				<span
+					class="px-3 py-1 bg-pink-500/20 text-pink-400 rounded-full text-sm"
+					>Tailwind</span
+				>
+				<span
+					class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
+					>HTML</span
+				>
+				<span
+					class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+					>CSS</span
+				>
+				<span
+					class="px-3 py-1 bg-black/20 text-white rounded-full text-sm"
+					>Next.js</span
+				>
+				<span
+					class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm"
+					>Gatsby</span
+				>
+				<span
+					class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+					>Python</span
+				>
+				<span
+					class="px-3 py-1 bg-teal-500/20 text-teal-400 rounded-full text-sm"
+					>FastAPI</span
+				>
+				<span
+					class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm"
+					>Django</span
+				>
+				<span
+					class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+					>SQL</span
+				>
+				<span
+					class="px-3 py-1 bg-slate-500/20 text-slate-400 rounded-full text-sm"
+					>Shadcn</span
+				>
+				<span
+					class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+					>aiogram</span
+				>
+				<span
+					class="px-3 py-1 bg-indigo-500/20 text-indigo-400 rounded-full text-sm"
+					>discord.py</span
+				>
+				<span
+					class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+					>Docker</span
+				>
+				<span
+					class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm"
+					>Figma</span
+				>
+				<span
+					class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
+					>Git</span
+				>
+			</div>
+		</div>
+	</div>
 </Layout>

@@ -1,0 +1,83 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+export const prerender = true;
+---
+
+<Layout title="Projects" backgroundUrl="/bg.gif">
+	<div
+		transition:animate="slide"
+		transition:name="main"
+		class="w-full max-w-4xl bg-[rgba(20,20,23,0.44)] backdrop-blur-lg rounded-lg shadow-xl p-6 text-white mx-4"
+	>
+		{/* Header Section */}
+		<div class="flex items-center space-x-4 mb-6">
+			<div>
+				<h1 class="text-2xl font-semibold">Projects</h1>
+				<p class="text-gray-300 text-sm">A collection of my recent work</p>
+			</div>
+		</div>
+
+		{/* Projects Grid */}
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			{/* Tebiles */}
+			<div class="group bg-[hsla(0,0%,100%,.03)] rounded-lg p-5 transition-all hover:bg-[rgba(40,40,45,0.06)]">
+				<div class="flex justify-between items-center mb-3">
+					<h3 class="text-xl font-medium text-white">Tebiles</h3>
+					<a href="https://tebiles.vercel.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">Visit →</a>
+				</div>
+				<p class="text-gray-300 mb-4">A modern file storage solution with seamless upload/download functionality. Main feature is no authentication required for uploading files.</p>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-2 py-1 bg-black/20 text-white/80 rounded-md text-sm">Next.js</span>
+					<span class="px-2 py-1 bg-slate-500/20 text-slate-300 rounded-md text-sm">Shadcn</span>
+					<span class="px-2 py-1 bg-green-500/20 text-green-300 rounded-md text-sm">Supabase</span>
+					<span class="px-2 py-1 bg-yellow-500/20 text-yellow-300 rounded-md text-sm">AWS S3</span>
+				</div>
+			</div>
+
+			{/* RoMon */}
+			<div class="group bg-[hsla(0,0%,100%,.03)] rounded-lg p-5 transition-all hover:bg-[rgba(40,40,45,0.06)]">
+				<div class="flex justify-between items-center mb-3">
+					<h3 class="text-xl font-medium text-white">RoMon</h3>
+					<a href="https://romon.vercel.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">Visit →</a>
+				</div>
+				<p class="text-gray-300 mb-4">Advanced monitoring service for private servers with real-time player tracking and comprehensive analytics visualization.</p>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-2 py-1 bg-black/20 text-white/80 rounded-md text-sm">Next.js</span>
+					<span class="px-2 py-1 bg-slate-500/20 text-slate-300 rounded-md text-sm">Shadcn</span>
+					<span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-md text-sm">MagicUI</span>
+					<span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded-md text-sm">MySQL</span>
+					<span class="px-2 py-1 bg-green-500/20 text-green-300 rounded-md text-sm">AuthJS</span>
+				</div>
+			</div>
+
+			{/* United Community */}
+			<div class="group bg-[hsla(0,0%,100%,.03)] rounded-lg p-5 transition-all hover:bg-[rgba(40,40,45,0.06)]">
+				<div class="flex justify-between items-center mb-3">
+					<h3 class="text-xl font-medium text-white">United Community</h3>
+					<a href="https://ucom.pages.dev" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">Visit →</a>
+				</div>
+				<p class="text-gray-300 mb-4">A comprehensive Roblox community featuring private servers, moderation tools, and an elegant landing page.</p>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-md text-sm">Astro.js</span>
+					<span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded-md text-sm">aiogram</span>
+					<span class="px-2 py-1 bg-indigo-500/20 text-indigo-300 rounded-md text-sm">discord.py</span>
+					<span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded-md text-sm">MySQL</span>
+				</div>
+			</div>
+
+			{/* Your Turn To Pick */}
+			<div class="group bg-[hsla(0,0%,100%,.03)] rounded-lg p-5 transition-all hover:bg-[rgba(40,40,45,0.06)]">
+				<div class="flex justify-between items-center mb-3">
+					<h3 class="text-xl font-medium text-white">Your Turn To Pick</h3>
+					<a href="https://your-turn-to-pick.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">Visit →</a>
+				</div>
+				<p class="text-gray-300 mb-4">An interactive game challenging players to guess hero selections in matches. Built with modern web technologies.</p>
+				<div class="flex flex-wrap gap-2">
+					<span class="px-2 py-1 bg-sky-500/20 text-sky-300 rounded-md text-sm">React</span>
+					<span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-md text-sm">Astro</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -1,48 +1,44 @@
-# Astro Starter Kit: Basics
+# Sqot0 Website
 
-```sh
-npm create astro@latest -- --template basics
+My personal portfolio website built with Astro and TailwindCSS.
+
+## 🚀 Features
+
+- Smooth page transitions
+- Parallax background effect on desktop
+- Responsive design
+- Server-side rendering with Cloudflare
+- Modern UI with blur effects
+
+## 🛠️ Tech Stack
+
+- [Astro](https://astro.build/) - Web framework
+- [TailwindCSS](https://tailwindcss.com/) - Styling
+- [Cloudflare](https://www.cloudflare.com/) - Hosting & Deployment
+
+## 🏃‍♂️ Running Locally
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/sqot0/Sqot0Website.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2. Install dependencies
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Add environment variables:
 
-## 🧞 Commands
+```env
+TELEGRAM_BOT_TOKEN=<YOUR TELEGRAM BOT TOKEN>
+TELEGRAM_CHAT_ID=<YOUR TELEGRAM CHAT ID>
+```
 
-All commands are run from the root of the project, from a terminal:
+4. Run the development server
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm run dev
+```
