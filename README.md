@@ -8,6 +8,7 @@ My personal portfolio website built with Astro and TailwindCSS.
 - Parallax background effect on desktop
 - Responsive design
 - Server-side rendering with Cloudflare
+- Contact form connected to Telegram bot
 - Modern UI with blur effects
 
 ## 🛠️ Tech Stack

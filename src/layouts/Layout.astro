@@ -96,27 +96,21 @@ const { title, backgroundUrl } = Astro.props;
 </html>
 
 <script is:inline>
+	const isTouchDevice = () => "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
 	if (!isTouchDevice()) {
-		function updateBackgroundPosition(offsetY) {
-			document.body.style.backgroundPosition = `50% ${offsetY}%`;
-			
-			document.body.style.backgroundSize = "cover";
-			document.body.style.backgroundAttachment = "fixed";
-		}
+		let mouseY = 0.5;
 
-		document.addEventListener("astro:page-load", () => {
-			const initialOffsetY = (window.innerHeight / 2) * 0.05;
-			updateBackgroundPosition(4.84);
-		});
+		const updateBackgroundPosition = () => {
+			document.body.style.backgroundPosition = `50% ${mouseY * 5}%`;
+		};
 
+		document.addEventListener("astro:page-load", () =>
+			updateBackgroundPosition(),
+		);
 		document.addEventListener("mousemove", (e) => {
-			const mouseY = e.clientY / window.innerHeight;
-			const offsetY = mouseY * 5;
-			updateBackgroundPosition(offsetY);
+			mouseY = e.clientY / window.innerHeight;
+			updateBackgroundPosition();
 		});
-	}
-
-	function isTouchDevice() {
-		return "ontouchstart" in window || navigator.maxTouchPoints > 0;
 	}
 </script>
