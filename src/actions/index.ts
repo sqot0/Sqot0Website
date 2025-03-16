@@ -11,8 +11,8 @@ export const server = {
     }),
     handler: async ({name, contact, message}, ctx) => {
 
-      const TELEGRAM_BOT_TOKEN = ctx.locals.runtime.env.TELEGRAM_BOT_TOKEN
-      const TELEGRAM_CHAT_ID = ctx.locals.runtime.env.TELEGRAM_CHAT_ID
+      const TELEGRAM_BOT_TOKEN = import.meta.env.DEV ? import.meta.env.TELEGRAM_BOT_TOKEN : ctx.locals.runtime.env.TELEGRAM_BOT_TOKEN
+      const TELEGRAM_CHAT_ID = import.meta.env.DEV ? import.meta.env.TELEGRAM_CHAT_ID : ctx.locals.runtime.env.TELEGRAM_CHAT_ID
 
         const content = `<b>Name:</b> ${name}%0A<b>Contact:</b> ${contact}%0A<b>Message:</b> ${message}`
 

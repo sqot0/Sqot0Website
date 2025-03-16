@@ -36,6 +36,7 @@ npm install
 ```env
 TELEGRAM_BOT_TOKEN=<YOUR TELEGRAM BOT TOKEN>
 TELEGRAM_CHAT_ID=<YOUR TELEGRAM CHAT ID>
+DEV=true
 ```
 
 4. Run the development server
