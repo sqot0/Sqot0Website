@@ -4,10 +4,15 @@ import { ClientRouter } from "astro:transitions";
 
 interface Props {
 	title: string;
-	backgroundUrl: string;
 }
 
-const { title, backgroundUrl } = Astro.props;
+const { title } = Astro.props;
+
+const pageTitle = title === "" ? "Sqot0" : `${title} | Sqot0`;
+
+const description = "Hi, I'm Sqot0. This is my personal website. I'm a full-stack developer with a passion for building web applications and bots";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -16,12 +21,31 @@ const { title, backgroundUrl } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<title>{pageTitle}</title>
+
+		<meta name="title" content={pageTitle} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={pageTitle} />
+		<meta property="twitter:description" content={description} />
+
+		<meta name="google-site-verification" content={import.meta.env.GOOGLE_SITE_VERIFICATION} />
+
 		<ClientRouter />
 	</head>
 	<body
-		class={`w-screen min-h-screen scroll-smooth bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center py-5`}
+		class={`w-screen min-h-screen scroll-smooth bg-[url('/bg.webp')] bg-cover bg-center bg-no-repeat flex items-center justify-center py-5`}
 	>
 		<slot />
 
