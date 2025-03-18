@@ -40,9 +40,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:title" content={pageTitle} />
 		<meta property="twitter:description" content={description} />
 
-		<meta name="google-site-verification" content={import.meta.env.GOOGLE_SITE_VERIFICATION} />
-
 		<ClientRouter />
+
+		<meta name="google-site-verification" content={import.meta.env.GOOGLE_SITE_VERIFICATION || Astro.locals.runtime.env.GOOGLE_SITE_VERIFICATION} />
 	</head>
 	<body
 		class={`w-screen min-h-screen scroll-smooth bg-[url('/bg.webp')] bg-cover bg-center bg-no-repeat flex items-center justify-center py-5`}

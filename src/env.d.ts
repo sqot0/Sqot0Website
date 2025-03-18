@@ -7,6 +7,7 @@ declare namespace App {
       env: {
         TELEGRAM_BOT_TOKEN: string;
         TELEGRAM_CHAT_ID: string;
+        GOOGLE_SITE_VERIFICATION: string;
       };
     };
   }
