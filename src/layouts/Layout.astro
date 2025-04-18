@@ -49,6 +49,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	>
 		<slot />
 
+		<a
+			transition:persist
+			href="https://buymeacoffee.com/sqot0"
+			target="_blank"
+			class="fixed bottom-5 right-5 hover:scale-105 transition-transform"
+		>
+			<img src="/icons/coffee.png" class="rounded-full h-8 w-8" alt="Buy me a coffee" width={24} height={24} />
+		</a>
+
 		<nav
 			transition:persist
 			class="fixed bottom-2 left-1/2 -translate-x-1/2 py-2 bg-[rgba(20,20,23,0.44)] backdrop-blur-lg rounded-full"
